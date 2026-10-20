@@ -1,0 +1,352 @@
+
+
+/* =====================================
+   PÁGINA DE BIENVENIDA - CLÍNICA BELLME
+   ===================================== */
+
+   .inicio-bellme {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 85% 20%, #F4E3E8 0%, transparent 35%),
+        var(--fondo, #FBF6F7);
+    color: var(--texto, #493940);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.inicio-bellme * {
+    box-sizing: border-box;
+}
+
+.inicio-bellme .bienvenida {
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 30px 7%;
+    display: flex;
+    flex-direction: column;
+}
+
+.inicio-bellme .bienvenida-header,
+.inicio-bellme .bienvenida-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.inicio-bellme .marca-bellme {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    color: var(--texto, #493940);
+    text-decoration: none;
+}
+
+.inicio-bellme .marca-icono {
+    width: 49px;
+    height: 49px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: var(--verde-suave, #F4E3E8);
+    color: var(--verde-oscuro, #A85F78);
+    font-size: 25px;
+}
+
+.inicio-bellme .marca-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.inicio-bellme .marca-texto strong {
+    font-size: 16px;
+    letter-spacing: 1.5px;
+}
+
+.inicio-bellme .marca-texto small {
+    color: var(--texto-suave, #98858C);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.inicio-bellme .acceso-privado {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--texto-suave, #98858C);
+    font-size: 13px;
+}
+
+.inicio-bellme .bienvenida-contenido {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: clamp(35px, 7vw, 110px);
+    padding: 65px 0;
+}
+
+.inicio-bellme .bienvenida-etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--verde-oscuro, #A85F78);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.inicio-bellme .punto-decorativo {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--verde, #D9A0AF);
+}
+
+.inicio-bellme .bienvenida-texto h1 {
+    margin: 25px 0;
+    max-width: 620px;
+    font-size: clamp(38px, 4.3vw, 64px);
+    line-height: 1.13;
+    letter-spacing: -2px;
+    font-weight: 600;
+}
+
+.inicio-bellme .bienvenida-texto h1 span {
+    display: block;
+    color: var(--verde-oscuro, #A85F78);
+}
+
+.inicio-bellme .bienvenida-descripcion {
+    max-width: 490px;
+    color: var(--texto-suave, #98858C);
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.inicio-bellme .boton-ingresar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    background: var(--verde-oscuro, #A85F78);
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 10px 24px #A85F7826;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inicio-bellme .boton-ingresar:hover {
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px #A85F7833;
+}
+
+.inicio-bellme .boton-ingresar i {
+    font-size: 18px;
+}
+
+.inicio-bellme .bienvenida-nota {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    color: var(--texto-suave, #98858C);
+    font-size: 12px;
+}
+
+.inicio-bellme .bienvenida-visual {
+    position: relative;
+    min-height: 430px;
+    display: grid;
+    place-items: center;
+}
+
+.inicio-bellme .visual-circulo {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.inicio-bellme .visual-circulo-grande {
+    width: min(36vw, 420px);
+    aspect-ratio: 1;
+    background: linear-gradient(145deg, #F4E3E8, #EBCAD5);
+}
+
+.inicio-bellme .visual-circulo-pequeno {
+    width: 105px;
+    height: 105px;
+    top: 9%;
+    right: 8%;
+    background: #E8C4CF;
+    opacity: 0.7;
+}
+
+.inicio-bellme .visual-tarjeta {
+    z-index: 1;
+    width: min(100%, 360px);
+    padding: 38px;
+    border: 1px solid #FFFFFFB8;
+    border-radius: 24px;
+    background: #FFFDFCDE;
+    box-shadow: 0 25px 70px #6F46500F;
+    backdrop-filter: blur(12px);
+}
+
+.inicio-bellme .visual-icono {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    margin-bottom: 28px;
+    border-radius: 19px;
+    background: var(--verde-suave, #F4E3E8);
+    color: var(--verde-oscuro, #A85F78);
+    font-size: 31px;
+}
+
+.inicio-bellme .visual-subtitulo {
+    color: var(--texto-suave, #98858C);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.inicio-bellme .visual-tarjeta h2 {
+    margin: 13px 0 24px;
+    font-size: 26px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.inicio-bellme .visual-linea {
+    width: 55px;
+    height: 3px;
+    border-radius: 5px;
+    background: var(--dorado, #C7AD7B);
+}
+
+.inicio-bellme .visual-pie {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    color: var(--texto-suave, #98858C);
+    font-size: 12px;
+}
+
+.inicio-bellme .visual-pie i {
+    color: var(--verde-oscuro, #A85F78);
+    font-size: 17px;
+}
+
+.inicio-bellme .detalle-flotante {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 53px;
+    height: 53px;
+    border-radius: 17px;
+    background: #FFFDFC;
+    color: var(--verde-oscuro, #A85F78);
+    box-shadow: 0 12px 30px #6F465012;
+    font-size: 22px;
+}
+
+.inicio-bellme .detalle-superior {
+    top: 23%;
+    left: 3%;
+}
+
+.inicio-bellme .detalle-inferior {
+    right: 2%;
+    bottom: 17%;
+}
+
+.inicio-bellme .bienvenida-footer {
+    padding-top: 20px;
+    border-top: 1px solid var(--borde, #EADDE1);
+    color: var(--texto-suave, #98858C);
+    font-size: 11px;
+}
+
+/* Adaptación para tablets y celulares */
+
+@media (max-width: 900px) {
+    .inicio-bellme .bienvenida {
+        padding: 25px 5%;
+    }
+
+    .inicio-bellme .bienvenida-contenido {
+        grid-template-columns: 1fr 0.85fr;
+        gap: 25px;
+    }
+
+    .inicio-bellme .visual-tarjeta {
+        padding: 27px;
+    }
+
+    .inicio-bellme .visual-tarjeta h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 650px) {
+    .inicio-bellme .bienvenida {
+        padding: 22px 6%;
+    }
+
+    .inicio-bellme .acceso-privado {
+        font-size: 0;
+    }
+
+    .inicio-bellme .acceso-privado i {
+        font-size: 19px;
+    }
+
+    .inicio-bellme .bienvenida-contenido {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 60px 0 35px;
+    }
+
+    .inicio-bellme .bienvenida-texto h1 {
+        font-size: clamp(38px, 10vw, 50px);
+        letter-spacing: -1.5px;
+    }
+
+    .inicio-bellme .bienvenida-descripcion {
+        font-size: 14px;
+    }
+
+    .inicio-bellme .bienvenida-visual {
+        min-height: 350px;
+    }
+
+    .inicio-bellme .visual-circulo-grande {
+        width: min(75vw, 340px);
+    }
+
+    .inicio-bellme .visual-tarjeta {
+        width: min(100%, 320px);
+    }
+
+    .inicio-bellme .bienvenida-footer {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .inicio-bellme .boton-ingresar {
+        transition: none;
+    }
+}

@@ -1,0 +1,655 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Insumos | Clínica Bellme</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Iconos -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Estilos originales y estilos de Insumos -->
+  <link rel="stylesheet" href="Css/dashboard.css">
+  <link rel="stylesheet" href="Css/insumos.css">
+</head>
+
+<body>
+
+  <div class="app-container">
+
+    <!-- MENÚ LATERAL: MISMA ESTRUCTURA DEL DASHBOARD -->
+    <aside class="sidebar">
+
+      <div class="brand">
+        <!-- Conserva aquí el logo original del Dashboard -->
+        <div class="brand-icon">
+          <i class="bi bi-heart-pulse"></i>
+        </div>
+
+        <div class="brand-info">
+          <h5>Clínica Bellme</h5>
+          <span>Gestión clínica</span>
+        </div>
+      </div>
+
+      <div class="menu-label">MENÚ PRINCIPAL</div>
+
+      <nav class="nav flex-column">
+
+        <a class="nav-link" href="dashboard.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+
+        <a class="nav-link active" href="insumos.html">
+          <i class="bi bi-box-seam"></i>
+          <span>Insumos</span>
+        </a>
+
+        <a class="nav-link" href="inventario.html">
+          <i class="bi bi-boxes"></i>
+          <span>Inventario</span>
+        </a>
+
+        <a class="nav-link" href="movimientos.html">
+          <i class="bi bi-arrow-left-right"></i>
+          <span>Movimientos</span>
+        </a>
+
+        <a class="nav-link" href="sucursales.html">
+          <i class="bi bi-hospital"></i>
+          <span>Sucursales</span>
+        </a>
+
+        <a class="nav-link" href="reportes.html">
+          <i class="bi bi-bar-chart"></i>
+          <span>Reportes</span>
+        </a>
+
+      </nav>
+
+      <div class="sidebar-footer">
+        <span>Clínica Bellme</span>
+        <small>Control de insumos</small>
+      </div>
+
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+
+      <!-- BARRA SUPERIOR: SIN CAMPANA DE NOTIFICACIONES -->
+      <header class="topbar">
+
+        <div>
+          <span class="eyebrow">GESTIÓN DE INVENTARIO</span>
+          <h2>Insumos</h2>
+          <p class="subtitle">
+            Control de entradas y productos de la clínica
+          </p>
+        </div>
+
+        <div class="user-profile">
+          <div class="user-avatar">A</div>
+
+          <div>
+            <strong id="nombreUsuario">Administrador</strong>
+            <small>Administración</small>
+          </div>
+        </div>
+
+      </header>
+
+      <!-- SUCURSAL: MISMO TIPO DE PANEL DEL DASHBOARD -->
+      <section class="branch-panel">
+
+        <div class="branch-icon">
+          <i class="bi bi-hospital"></i>
+        </div>
+
+        <div class="branch-info">
+          <strong>Clínica Bellme Centro</strong>
+          <span>Valparaíso</span>
+        </div>
+
+        <div class="branch-status">
+          <span class="status-dot"></span>
+          Sucursal activa
+        </div>
+
+        <button
+          type="button"
+          class="btn-branch"
+          id="btnCambiarSucursal"
+        >
+          <i class="bi bi-chevron-down"></i>
+          Cambiar sucursal
+        </button>
+
+      </section>
+
+      <!-- DISTRIBUCIÓN EN DOS COLUMNAS -->
+      <section class="insumos-layout">
+
+        <!-- COLUMNA IZQUIERDA -->
+        <div class="content-panel panel-entrada">
+
+          <div class="panel-heading insumos-panel-heading">
+            <div>
+                <h5>Registrar entrada de stock</h5>
+                <p>Completa los datos del ingreso.</p>
+            </div>
+            
+            <div class="form-section-icon">
+                <i class="bi bi-clipboard-check"></i>
+            </div>
+          </div>
+
+          <form id="formularioEntrada">
+
+            <div class="row g-3">
+
+              <div class="col-12 col-md-6">
+                <label for="insumoEntrada" class="form-label">
+                  Insumo
+                </label>
+
+                <select
+                  class="form-select"
+                  id="insumoEntrada"
+                  required
+                >
+                  <option value="">Selecciona un insumo</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="cantidadEntrada" class="form-label">
+                  Cantidad
+                </label>
+
+                <input
+                  type="number"
+                  class="form-control"
+                  id="cantidadEntrada"
+                  min="1"
+                  step="1"
+                  placeholder="Ej. 50"
+                  required
+                >
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="fechaEntrada" class="form-label">
+                  Fecha de ingreso
+                </label>
+
+                <input
+                  type="date"
+                  class="form-control"
+                  id="fechaEntrada"
+                  required
+                >
+              </div>
+
+              <div class="col-12 col-md-6">
+                <label for="periodoEntrada" class="form-label">
+                  Período
+                </label>
+
+                <select
+                  class="form-select"
+                  id="periodoEntrada"
+                  required
+                >
+                  <option value="1">Período 1</option>
+                  <option value="2">Período 2</option>
+                </select>
+              </div>
+
+            </div>
+
+            <div
+              id="mensajeEntrada"
+              class="form-message"
+              role="status"
+              aria-live="polite"
+            ></div>
+
+            <div class="form-actions entrada-actions">
+              <button
+                type="submit"
+                class="btn btn-primary-custom w-100"
+              >
+                <i class="bi bi-check-circle me-2"></i>
+                Registrar entrada
+              </button>
+            </div>
+
+          </form>
+
+          <div class="form-divider"></div>
+
+          <!-- CREAR NUEVO INSUMO -->
+          <div class="crear-insumo-action">
+
+            <div>
+              <h6>¿No encuentras el insumo?</h6>
+              <p>Agrega un producto al catálogo.</p>
+            </div>
+
+            <button
+              type="button"
+              class="btn btn-outline-custom"
+              id="btnMostrarFormulario"
+              aria-expanded="false"
+              aria-controls="contenedorNuevoInsumo"
+            >
+              <i class="bi bi-plus-circle me-2"></i>
+              Crear nuevo insumo
+            </button>
+
+          </div>
+
+          <div id="contenedorNuevoInsumo" hidden>
+
+            <div class="form-divider"></div>
+
+            <div class="panel-heading">
+              <div>
+                <h5>Nuevo insumo</h5>
+                <p>Completa la información del producto.</p>
+              </div>
+            </div>
+
+            <form id="formularioProducto">
+
+              <div class="mb-3">
+                <label for="nombreInsumo" class="form-label">
+                  Nombre del insumo
+                </label>
+
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombreInsumo"
+                  maxlength="100"
+                  placeholder="Ej. Guantes de procedimiento"
+                  required
+                >
+              </div>
+
+              <div class="mb-3">
+                <label for="stockInicial" class="form-label">
+                  Stock inicial
+                </label>
+
+                <input
+                  type="number"
+                  class="form-control"
+                  id="stockInicial"
+                  min="0"
+                  step="1"
+                  value="0"
+                  required
+                >
+              </div>
+
+              <div class="mb-3">
+                <label for="estadoInsumo" class="form-label">
+                  Estado del producto
+                </label>
+
+                <select
+                  class="form-select"
+                  id="estadoInsumo"
+                  required
+                >
+                  <option value="activo">Activo</option>
+                  <option value="inactivo">Inactivo</option>
+                </select>
+              </div>
+
+              <div
+                id="mensajeProducto"
+                class="form-message"
+                role="status"
+                aria-live="polite"
+              ></div>
+
+              <div class="form-actions">
+
+                <button
+                  type="button"
+                  class="btn btn-secondary-custom"
+                  id="btnCancelarInsumo"
+                >
+                  Cancelar
+                </button>
+
+                <button
+                  type="submit"
+                  class="btn btn-primary-custom"
+                >
+                  <i class="bi bi-check-circle me-2"></i>
+                  Guardar insumo
+                </button>
+
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+        <!-- COLUMNA DERECHA -->
+        <div class="content-panel panel-ultimos-ingresos">
+
+          <div class="panel-heading insumos-panel-heading">
+            <div>
+              <h5>Últimos 5 ingresos</h5>
+              <p>Productos recientemente ingresados al inventario.</p>
+            </div>
+
+            <div class="form-section-icon">
+                <i class="bi bi-clock-history"></i>
+              </div>
+          </div>
+
+          <div
+            id="listaUltimosInsumos"
+            class="recent-products"
+            aria-live="polite"
+          >
+
+            <!-- Datos ficticios de presentación.
+                 JavaScript podrá reemplazarlos por registros reales. -->
+
+            <article class="recent-product">
+
+              <div class="recent-product-header">
+                <div class="recent-product-icon">
+                  <i class="bi bi-box-seam"></i>
+                </div>
+
+                <div class="recent-product-info">
+                  <strong class="recent-product-name">
+                    Guantes de procedimiento
+                  </strong>
+                  <span class="recent-product-code">
+                    Código: INS-7K2P9A
+                  </span>
+                </div>
+
+                <div class="recent-product-actions">
+                  <button
+                    type="button"
+                    class="icon-action edit-action"
+                    aria-label="Editar Guantes de procedimiento"
+                    title="Editar"
+                    disabled
+                  >
+                    <i class="bi bi-pencil"></i>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="icon-action delete-action"
+                    aria-label="Eliminar Guantes de procedimiento"
+                    title="Eliminar"
+                    disabled
+                  >
+                    <i class="bi bi-trash3"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="recent-product-details">
+
+                <div>
+                  <span>Stock actual</span>
+                  <strong>150 unidades</strong>
+                </div>
+
+                <div>
+                  <span>Fecha de ingreso</span>
+                  <strong>20/10/2026</strong>
+                </div>
+
+                <div>
+                  <span>Estado del producto</span>
+                  <strong class="product-status">Activo</strong>
+                </div>
+
+              </div>
+
+            </article>
+
+            <article class="recent-product">
+
+              <div class="recent-product-header">
+                <div class="recent-product-icon">
+                  <i class="bi bi-box-seam"></i>
+                </div>
+
+                <div class="recent-product-info">
+                  <strong class="recent-product-name">
+                    Mascarillas quirúrgicas
+                  </strong>
+                  <span class="recent-product-code">
+                    Código: INS-4M8R2B
+                  </span>
+                </div>
+
+                <div class="recent-product-actions">
+                  <button type="button" class="icon-action edit-action"
+                    aria-label="Editar Mascarillas quirúrgicas"
+                    title="Editar" disabled>
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button type="button" class="icon-action delete-action"
+                    aria-label="Eliminar Mascarillas quirúrgicas"
+                    title="Eliminar" disabled>
+                    <i class="bi bi-trash3"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="recent-product-details">
+                <div>
+                  <span>Stock actual</span>
+                  <strong>300 unidades</strong>
+                </div>
+                <div>
+                  <span>Fecha de ingreso</span>
+                  <strong>18/10/2026</strong>
+                </div>
+                <div>
+                  <span>Estado del producto</span>
+                  <strong class="product-status">Activo</strong>
+                </div>
+              </div>
+
+            </article>
+
+            <article class="recent-product">
+
+              <div class="recent-product-header">
+                <div class="recent-product-icon">
+                  <i class="bi bi-box-seam"></i>
+                </div>
+
+                <div class="recent-product-info">
+                  <strong class="recent-product-name">
+                    Jeringas de 5 ml
+                  </strong>
+                  <span class="recent-product-code">
+                    Código: INS-9T3L6C
+                  </span>
+                </div>
+
+                <div class="recent-product-actions">
+                  <button type="button" class="icon-action edit-action"
+                    aria-label="Editar Jeringas de 5 ml"
+                    title="Editar" disabled>
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button type="button" class="icon-action delete-action"
+                    aria-label="Eliminar Jeringas de 5 ml"
+                    title="Eliminar" disabled>
+                    <i class="bi bi-trash3"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="recent-product-details">
+                <div>
+                  <span>Stock actual</span>
+                  <strong>80 unidades</strong>
+                </div>
+                <div>
+                  <span>Fecha de ingreso</span>
+                  <strong>16/10/2026</strong>
+                </div>
+                <div>
+                  <span>Estado del producto</span>
+                  <strong class="product-status">Activo</strong>
+                </div>
+              </div>
+
+            </article>
+
+            <article class="recent-product">
+
+              <div class="recent-product-header">
+                <div class="recent-product-icon">
+                  <i class="bi bi-box-seam"></i>
+                </div>
+
+                <div class="recent-product-info">
+                  <strong class="recent-product-name">
+                    Gasas estériles
+                  </strong>
+                  <span class="recent-product-code">
+                    Código: INS-2W5N8D
+                  </span>
+                </div>
+
+                <div class="recent-product-actions">
+                  <button type="button" class="icon-action edit-action"
+                    aria-label="Editar Gasas estériles"
+                    title="Editar" disabled>
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button type="button" class="icon-action delete-action"
+                    aria-label="Eliminar Gasas estériles"
+                    title="Eliminar" disabled>
+                    <i class="bi bi-trash3"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="recent-product-details">
+                <div>
+                  <span>Stock actual</span>
+                  <strong>120 unidades</strong>
+                </div>
+                <div>
+                  <span>Fecha de ingreso</span>
+                  <strong>14/10/2026</strong>
+                </div>
+                <div>
+                  <span>Estado del producto</span>
+                  <strong class="product-status inactive">Inactivo</strong>
+                </div>
+              </div>
+
+            </article>
+
+            <article class="recent-product">
+
+              <div class="recent-product-header">
+                <div class="recent-product-icon">
+                  <i class="bi bi-box-seam"></i>
+                </div>
+
+                <div class="recent-product-info">
+                  <strong class="recent-product-name">
+                    Alcohol al 70%
+                  </strong>
+                  <span class="recent-product-code">
+                    Código: INS-6H1F4E
+                  </span>
+                </div>
+
+                <div class="recent-product-actions">
+                  <button type="button" class="icon-action edit-action"
+                    aria-label="Editar Alcohol al 70%"
+                    title="Editar" disabled>
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button type="button" class="icon-action delete-action"
+                    aria-label="Eliminar Alcohol al 70%"
+                    title="Eliminar" disabled>
+                    <i class="bi bi-trash3"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="recent-product-details">
+                <div>
+                  <span>Stock actual</span>
+                  <strong>45 unidades</strong>
+                </div>
+                <div>
+                  <span>Fecha de ingreso</span>
+                  <strong>12/10/2026</strong>
+                </div>
+                <div>
+                  <span>Estado del producto</span>
+                  <strong class="product-status">Activo</strong>
+                </div>
+              </div>
+
+            </article>
+
+          </div>
+
+          <div class="recent-products-footer">
+            <i class="bi bi-info-circle"></i>
+            Los ejemplos son ficticios. Los controles se activarán al
+            conectar la lógica de la aplicación.
+          </div>
+
+        </div>
+
+      </section>
+
+      <footer class="app-footer">
+        Clínica Bellme · Sistema de gestión de insumos
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="Js/insumos.js"></script>
+
+</body>
+</html>
+
+

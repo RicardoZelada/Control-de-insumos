@@ -1,0 +1,583 @@
+
+
+/* =========================================
+   CLÍNICA BELLMЕ
+   Estilos específicos de la página Insumos
+   Complementa Css/dashboard.css
+========================================= */
+
+/* ---------- Encabezados de formularios ---------- */
+
+
+/* =========================================
+   CLÍNICA BELLMЕ
+   Página de Insumos
+   Compatible con Css/dashboard.css
+========================================= */
+
+/* ---------- Distribución principal ---------- */
+
+.insumos-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr);
+    align-items: stretch;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  
+  .insumos-layout > .content-panel {
+    min-width: 0;
+    padding: 24px;
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    background: var(--blanco);
+  }
+  
+  .panel-entrada,
+  .panel-ultimos-ingresos {
+    min-width: 0;
+  }
+  
+  /* ---------- Encabezados de sección ---------- */
+  
+  .insumos-panel-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 25px;
+  }
+  
+  .insumos-panel-heading h5 {
+    margin: 0;
+    color: var(--texto);
+    font-size: 17px;
+    font-weight: 650;
+    line-height: 1.4;
+  }
+  
+  .insumos-panel-heading p {
+    margin: 5px 0 0;
+    color: var(--texto-suave);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  
+  .form-section-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    flex: 0 0 43px;
+    border-radius: 13px;
+    background: #FBE8EE;
+    color: var(--verde-oscuro);
+    font-size: 20px;
+  }
+  
+  /* ---------- Campos de formulario ---------- */
+  
+  .main-content .form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--texto);
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .main-content .form-control,
+  .main-content .form-select {
+    width: 100%;
+    min-height: 44px;
+    border: 1px solid var(--borde);
+    border-radius: 9px;
+    background-color: var(--blanco);
+    color: var(--texto);
+    font-family: inherit;
+    font-size: 12px;
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .main-content .form-control {
+    padding: 10px 12px;
+  }
+  
+  .main-content .form-select {
+    padding: 10px 34px 10px 12px;
+  }
+  
+  .main-content .form-control::placeholder {
+    color: #B5A5AB;
+  }
+  
+  .main-content .form-control:focus,
+  .main-content .form-select:focus {
+    border-color: var(--verde-oscuro);
+    box-shadow: 0 0 0 3px rgba(168, 95, 120, 0.12);
+  }
+  
+  .main-content .form-control:disabled,
+  .main-content .form-select:disabled {
+    background-color: #F7F1F3;
+    color: var(--texto-suave);
+    cursor: not-allowed;
+  }
+  
+  /* ---------- Botón registrar entrada ---------- */
+  
+  .entrada-actions {
+    margin-top: 25px;
+  }
+  
+  .main-content .btn-primary-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    padding: 11px 16px;
+    border: 1px solid var(--verde-oscuro);
+    border-radius: 9px;
+    background: var(--verde-oscuro);
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .main-content .btn-primary-custom:hover {
+    border-color: #914C65;
+    background: #914C65;
+    color: #FFFFFF;
+  }
+  
+  .main-content .btn-primary-custom:active {
+    transform: translateY(1px);
+  }
+  
+  /* ---------- Separador ---------- */
+  
+  .form-divider {
+    width: 100%;
+    height: 1px;
+    margin: 25px 0;
+    background: var(--borde);
+  }
+  
+  /* ---------- Crear nuevo insumo ---------- */
+  
+  .crear-insumo-action {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  
+  .crear-insumo-action h6 {
+    margin: 0;
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .crear-insumo-action p {
+    margin: 5px 0 0;
+    color: var(--texto-suave);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  
+  .btn-outline-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 43px;
+    padding: 10px 14px;
+    border: 1px solid #D9A5B7;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--verde-oscuro);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .btn-outline-custom:hover {
+    border-color: var(--verde-oscuro);
+    background: #FCF0F4;
+    color: var(--verde-oscuro);
+  }
+  
+  /* Ocultar el formulario hasta que se solicite */
+  
+  #contenedorNuevoInsumo[hidden] {
+    display: none !important;
+  }
+  
+  #contenedorNuevoInsumo {
+    margin-top: 20px;
+  }
+  
+  #contenedorNuevoInsumo .panel-heading {
+    margin-bottom: 18px;
+  }
+  
+  #contenedorNuevoInsumo .panel-heading h5 {
+    margin: 0;
+    color: var(--texto);
+    font-size: 15px;
+    font-weight: 650;
+  }
+  
+  #contenedorNuevoInsumo .panel-heading p {
+    margin: 5px 0 0;
+    color: var(--texto-suave);
+    font-size: 12px;
+  }
+  
+  #formularioProducto .mb-3 {
+    margin-bottom: 16px !important;
+  }
+  
+  #formularioProducto .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .btn-secondary-custom {
+    min-height: 40px;
+    padding: 9px 15px;
+    border: 1px solid var(--borde);
+    border-radius: 9px;
+    background: var(--blanco);
+    color: var(--texto);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .btn-secondary-custom:hover {
+    border-color: #D9BBC6;
+    background: #FBF0F4;
+    color: var(--verde-oscuro);
+  }
+  
+  /* ---------- Mensajes ---------- */
+  
+  .form-message {
+    margin-top: 12px;
+    color: var(--texto-suave);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  
+  .form-message:empty {
+    display: none;
+  }
+  
+  .form-message.success {
+    color: #397A59;
+  }
+  
+  .form-message.error {
+    color: #B54355;
+  }
+  
+  .form-message.info {
+    color: var(--verde-oscuro);
+  }
+  
+  /* ---------- Lista de últimos ingresos ---------- */
+  
+  .recent-products {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    min-width: 0;
+  }
+  
+  .recent-product {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--borde);
+    border-radius: 11px;
+    background: var(--blanco);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .recent-product:hover {
+    border-color: #DEC4CE;
+    box-shadow: 0 3px 12px rgba(105, 67, 82, 0.045);
+  }
+  
+  /* Encabezado de cada tarjeta */
+  
+  .recent-product-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+  }
+  
+  .recent-product-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    border-radius: 50%;
+    background: #FBE8EE;
+    color: var(--verde-oscuro);
+    font-size: 17px;
+  }
+  
+  .recent-product-info {
+    min-width: 0;
+    flex: 1;
+    padding-top: 2px;
+  }
+  
+  .recent-product-name {
+    display: block;
+    overflow-wrap: anywhere;
+    color: var(--texto);
+    font-size: 12px;
+    font-weight: 650;
+    line-height: 1.5;
+  }
+  
+  .recent-product-code {
+    display: block;
+    margin-top: 3px;
+    overflow-wrap: anywhere;
+    color: var(--texto-suave);
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  
+  /* Iconos para editar y eliminar */
+  
+  .recent-product-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  
+  .icon-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  
+  .edit-action {
+    color: var(--verde-oscuro);
+  }
+  
+  .edit-action:hover:not(:disabled) {
+    background: #FBE8EE;
+    color: #914C65;
+  }
+  
+  .delete-action {
+    color: #C94D5C;
+  }
+  
+  .delete-action:hover:not(:disabled) {
+    background: #FFF0F1;
+    color: #A92F40;
+  }
+  
+  .icon-action i {
+    font-size: 15px;
+  }
+  
+  .icon-action:disabled {
+    opacity: 0.85;
+    cursor: not-allowed;
+  }
+  
+  /* Detalles: stock, fecha y estado */
+  
+  .recent-product-details {
+    display: grid;
+    grid-template-columns: 1fr 1.12fr 0.9fr;
+    border-top: 1px solid #F0E7EA;
+  }
+  
+  .recent-product-details > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+    gap: 5px;
+    padding: 10px 11px;
+  }
+  
+  .recent-product-details > div + div {
+    border-left: 1px solid #F0E7EA;
+  }
+  
+  .recent-product-details span {
+    color: var(--texto-suave);
+    font-size: 10px;
+    line-height: 1.4;
+  }
+  
+  .recent-product-details strong {
+    overflow-wrap: anywhere;
+    color: var(--texto);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  
+  .recent-product-details .product-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 9px;
+    border-radius: 20px;
+    background: #EAF5EE;
+    color: #397A59;
+    font-size: 10px;
+    font-weight: 600;
+  }
+  
+  .recent-product-details .product-status.inactive {
+    background: #F8E4E8;
+    color: #A34C60;
+  }
+  
+  /* ---------- Pie de lista ---------- */
+  
+  .recent-products-footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin-top: 16px;
+    color: var(--texto-suave);
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  
+  .recent-products-footer i {
+    margin-top: 1px;
+    color: var(--verde-oscuro);
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  
+  /* ---------- Adaptación a pantallas medianas ---------- */
+  
+  @media (max-width: 1199.98px) {
+    .insumos-layout {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 15px;
+    }
+  
+    .insumos-layout > .content-panel {
+      padding: 18px;
+    }
+  
+    .recent-product-details {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .recent-product-details > div:last-child {
+      grid-column: 1 / -1;
+      border-top: 1px solid #F0E7EA;
+      border-left: 0;
+    }
+  }
+  
+  /* ---------- Adaptación a móviles ---------- */
+  
+  @media (max-width: 767.98px) {
+    .insumos-layout {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+  
+    .insumos-layout > .content-panel {
+      padding: 16px;
+    }
+  
+    .insumos-panel-heading {
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+  
+    .insumos-panel-heading h5 {
+      font-size: 15px;
+    }
+  
+    .recent-product-header {
+      gap: 8px;
+      padding: 10px;
+    }
+  
+    .recent-product-actions {
+      gap: 3px;
+    }
+  
+    .recent-product-details {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+    .recent-product-details > div:last-child {
+      grid-column: 1 / -1;
+      border-top: 1px solid #F0E7EA;
+      border-left: 0;
+    }
+  
+    #formularioProducto .form-actions {
+      flex-direction: column-reverse;
+    }
+  
+    #formularioProducto .form-actions button {
+      width: 100%;
+    }
+  }
+  
+  /* ---------- Móviles pequeños ---------- */
+  
+  @media (max-width: 380px) {
+    .recent-product-details {
+      grid-template-columns: 1fr;
+    }
+  
+    .recent-product-details > div + div,
+    .recent-product-details > div:last-child {
+      grid-column: auto;
+      border-top: 1px solid #F0E7EA;
+      border-left: 0;
+    }
+  
+    .recent-product-header {
+      flex-wrap: wrap;
+    }
+  
+    .recent-product-actions {
+      margin-left: auto;
+    }
+  }
+  
+  
