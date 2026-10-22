@@ -650,3 +650,52 @@ body {
     }
 }
 
+
+/* Botón para cerrar el menú móvil */
+.menu-close {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        box-sizing: border-box;
+        padding-top: 16px;
+    }
+
+    .menu-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        margin: 0 16px 12px auto;
+        padding: 0;
+        border: 1px solid var(--borde);
+        border-radius: 10px;
+        background: var(--blanco);
+        color: var(--verde-oscuro);
+        font-size: 1.2rem;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    /* Las seis opciones, una debajo de otra */
+    .sidebar nav.nav {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .sidebar nav.nav .nav-link {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+        flex: 0 0 auto;
+    }
+}
+
+
