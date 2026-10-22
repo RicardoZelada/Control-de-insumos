@@ -698,4 +698,49 @@ body {
     }
 }
 
+/* Ajuste visuales del menu movil */
 
+@media(max-width: 768px){
+    .sidebar{
+        width: 290px;
+        max-width: 85vw;
+    }
+    /* Encabezado: logo, titulo y boton x */
+    .sidebar .brand{
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .sidebar .brand-text{
+        flex: 1;
+        min-width: 0;
+    }
+    .sidebar .brand-text h5{
+        white-space: nowrap;
+        font-size: 1.05rem;
+    }
+
+    .sidebar .menu-close{
+        margin: 0 0 0 auto;
+        flex: 0 0 36px;
+        width: 36px;
+        height: 36px;
+    }
+    /* Menu vertical: una opcion por fila */
+    .sidebar nav.nav{
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+        gap: 6px;
+    }
+
+    .sidebar nav.nav > .nav-link{
+        display: flex !important;
+        width: 100% !important;
+        flex: 0 0 auto !important;
+        box-sizing: border-box;
+    }
+}
