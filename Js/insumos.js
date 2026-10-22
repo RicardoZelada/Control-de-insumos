@@ -2,6 +2,74 @@
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    // ==========================================
+    // MENÚ LATERAL RESPONSIVO
+    // ==========================================
+
+    const botonMenu = document.getElementById("menuToggle");
+    const botonCerrar = document.getElementById("menuClose");
+    const menuLateral = document.getElementById("sidebar");
+
+    function cerrarMenu() {
+        if (!menuLateral) return;
+
+        menuLateral.classList.remove("menu-abierto");
+
+        if (botonMenu) {
+            botonMenu.setAttribute("aria-expanded", "false");
+            botonMenu.setAttribute("aria-label", "Abrir menú de navegación");
+            botonMenu.innerHTML = '<i class="bi bi-list"></i>';
+        }
+    }
+
+    function abrirMenu() {
+        if (!menuLateral) return;
+
+        menuLateral.classList.add("menu-abierto");
+
+        if (botonMenu) {
+            botonMenu.setAttribute("aria-expanded", "true");
+            botonMenu.setAttribute("aria-label", "Cerrar menú de navegación");
+            botonMenu.innerHTML = '<i class="bi bi-x-lg"></i>';
+        }
+    }
+
+    if (botonMenu && menuLateral) {
+        botonMenu.addEventListener("click", () => {
+            const menuEstaAbierto =
+                menuLateral.classList.contains("menu-abierto");
+
+            if (menuEstaAbierto) {
+                cerrarMenu();
+            } else {
+                abrirMenu();
+            }
+        });
+    }
+
+    if (botonCerrar) {
+        botonCerrar.addEventListener("click", cerrarMenu);
+    }
+
+    if (menuLateral) {
+        menuLateral.querySelectorAll(".nav-link").forEach((enlace) => {
+            enlace.addEventListener("click", cerrarMenu);
+        });
+    }
+
+    document.addEventListener("keydown", (evento) => {
+        if (evento.key === "Escape") {
+            cerrarMenu();
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 768) {
+            cerrarMenu();
+        }
+    });
+
     // ==========================================
     // ELEMENTOS DEL FORMULARIO DE NUEVO INSUMO
     // ==========================================
