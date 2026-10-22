@@ -644,11 +644,25 @@ body {
         min-width: 0;
     }
 
-    .topbar {
+    /*.topbar {
         gap: 12px;
         align-items: flex-start;
-    }
-}
+    }*/
+
+
+        .topbar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .topbar > div:first-child {
+            flex: 1;
+            min-width: 0;
+        }
+
+        }
 
 
 /* Botón para cerrar el menú móvil */
