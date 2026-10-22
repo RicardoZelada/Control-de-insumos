@@ -644,25 +644,20 @@ body {
         min-width: 0;
     }
 
-    /*.topbar {
-        gap: 12px;
-        align-items: flex-start;
-    }*/
+    .topbar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 8px;
+    }
 
-
-        .topbar {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .topbar > div:first-child {
-            flex: 1;
-            min-width: 0;
-        }
-
-        }
+    .topbar > div:first-child {
+        flex: 0 1 auto;
+        min-width: 0;
+        margin: 0;
+    }
+}
 
 
 /* Botón para cerrar el menú móvil */
